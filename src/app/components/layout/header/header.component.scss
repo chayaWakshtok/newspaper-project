@@ -1,0 +1,49 @@
+.user {
+  font-family: 'Kerney Script PERSONAL USE', sans-serif;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 45.5px;
+  // text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 222px;
+  background-color: white;
+  padding: 0;
+
+  p {
+    text-align: center;
+    padding-top: 1.35rem;
+  }
+}
+
+.get {
+  font-family: Fb Ruhama;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 33.8px;
+  letter-spacing: -0.04em;
+  // text-align: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.28);
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 115px;
+  background-color: rgba(217, 217, 217, 0.45);
+  img{
+    float: right;
+    margin-top: 30px;
+    position: relative;
+  }
+  p{
+    padding-top: 0rem;
+    text-align: center;
+    position: relative;
+    top: 7px;
+    left: 4px;
+
+  }
+
+}
+.header{
+  border-bottom: 2px solid black;
+}

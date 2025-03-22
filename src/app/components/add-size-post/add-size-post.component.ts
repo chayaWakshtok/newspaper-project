@@ -1,11 +1,13 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Signal, signal, effect, inject } from '@angular/core';
+import { Component, Signal, signal, effect, inject, NgModule } from '@angular/core';
 import { Firestore, collection, collectionData, addDoc, query, where } from '@angular/fire/firestore';
+import { SizePost } from '../../models/size-post.model';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-add-size-post',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe,FormsModule],
   templateUrl: './add-size-post.component.html',
   styleUrl: './add-size-post.component.scss'
 })
@@ -14,6 +16,8 @@ export class AddSizePostComponent {
 
   // מחליף Observable ב-Signal
   items = signal<any[]>([]);
+  sizePost:SizePost=new SizePost();
+
 
   constructor() {
     this.loadSizes();
@@ -30,14 +34,12 @@ export class AddSizePostComponent {
   }
 
   async create() {
+    debugger;
     const aCollection = collection(this.firestore, 'sizes-post');
 
     try {
-      await addDoc(aCollection, {
-        name: 'New Size',
-        value: 'Large',
-        createdAt: new Date()
-      });
+      await addDoc(aCollection, this.sizePost);
+      this.sizePost = new SizePost();
       console.log('Document added successfully');
     } catch (error) {
       console.error('Error adding document:', error);

@@ -1,6 +1,14 @@
-
+<!--
 <ul>
   <li *ngFor="let post of getPostsBySizePost('123456')()">
     {{ post.title }}
   </li>
-</ul>
+</ul> -->
+
+<form>
+  <input type="text" [(ngModel)]="sizePost.name" name="name" placeholder="Name">
+  <input type="text" [(ngModel)]="sizePost.x" name="x" placeholder="X">
+  <input type="text" [(ngModel)]="sizePost.y" name="y" placeholder="Y">
+
+  <button (click)="create()">Get Posts</button>
+</form>

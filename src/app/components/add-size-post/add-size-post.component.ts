@@ -36,9 +36,12 @@ export class AddSizePostComponent {
   async create() {
     debugger;
     const aCollection = collection(this.firestore, 'sizes-post');
+    const sizePostData = { ...this.sizePost };
+
+   delete sizePostData.id;
 
     try {
-      await addDoc(aCollection, this.sizePost);
+      await addDoc(aCollection, sizePostData);
       this.sizePost = new SizePost();
       console.log('Document added successfully');
     } catch (error) {

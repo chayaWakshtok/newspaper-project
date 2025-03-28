@@ -1,0 +1,28 @@
+<div class="div">
+  @for (item of items; track $index) {
+  <div class="rectangle" (click)="open(content,item)" [ngStyle]="{'width.px': item.x, 'height.px': item.y}">
+    {{item.name}}
+  </div>
+  }
+</div>
+
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">הוספת מודעה</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">שם</label>
+        <input type="text" class="form-control" placeholder="שם" [(ngModel)]="post.name" name="name" required>
+
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>

@@ -1,9 +1,4 @@
 .user {
-  font-family: 'Kerney Script PERSONAL USE', sans-serif;
-  font-size: 35px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 45.5px;
   // text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
@@ -11,39 +6,50 @@
   background-color: white;
   padding: 0;
 
+  color: rgba(109, 101, 101, 1);
+  font-family: "Coolvetica";
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+
   p {
     text-align: center;
     padding-top: 1.35rem;
   }
 }
 
-.get {
-  font-family: Fb Ruhama;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 33.8px;
-  letter-spacing: -0.04em;
-  // text-align: center;
-  border-left: 1px solid rgba(0, 0, 0, 0.28);
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  width: 115px;
-  background-color: rgba(217, 217, 217, 0.45);
-  img{
-    float: right;
-    margin-top: 30px;
-    position: relative;
-  }
-  p{
-    padding-top: 0rem;
-    text-align: center;
-    position: relative;
-    top: 7px;
-    left: 4px;
-
-  }
-
+img {
+  height: 50px;
+  width: 203px;
 }
-.header{
-  border-bottom: 2px solid black;
+
+.img2 {
+  left: 90px;
+  position: relative;
+}
+
+.img3 {
+  left: 180px;
+  position: relative;
+}
+
+.blocks {
+  font-family: Fb Shapinger Heb;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0%;
+  text-align: center;
+
+  color: white;
+  width: 143px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  top: 25px;
+  left: 32px;
+  position: fixed;
+  border-radius: 10px;
+  background: rgba(109, 101, 101, 1);
+
 }

@@ -1,0 +1,21 @@
+.rectangle {
+  background-color: rgba(240, 240, 240, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  // font-family: Fb Shapinger En;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: -4%;
+
+}
+
+.div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* רווח של 2 ס"מ בין המלבנים */
+  padding: 40px;
+}

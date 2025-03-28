@@ -27,6 +27,7 @@ export const appConfig: ApplicationConfig = {
   // const provider = new ReCaptchaEnterpriseProvider(/* reCAPTCHA Enterprise site key */);
   //return initializeAppCheck(undefined, { provider, isTokenAutoRefreshEnabled: true });
   //}),
+
   provideFirestore(() => getFirestore()),
   provideDatabase(() => getDatabase()),
   provideFunctions(() => getFunctions()),

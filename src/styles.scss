@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('assets/fonts/coolvetica\ rg.woff') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  background: rgba(255, 255, 255, 0.12);
+
+}

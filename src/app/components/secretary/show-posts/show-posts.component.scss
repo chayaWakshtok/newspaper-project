@@ -1,5 +1,5 @@
 .rectangle {
-  background-color: rgba(240, 240, 240, 1);
+  background-color: rgba(247, 245, 245, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,20 @@
   font-size: 12px;
   line-height: 100%;
   letter-spacing: -4%;
+  color: rgba(12, 57, 223, 1);
 
+}
+
+.pointer {
+  width: 130px;
+  height: 50px;
+  bottom: 25px;
+  right: 18px;
+  position: fixed;
+  border-radius: 58px;
+  background: linear-gradient(100.86deg, #0C39DF 2.15%, #B232F9 98.91%);
+  border: none;
+  color: white;
 }
 
 .div {

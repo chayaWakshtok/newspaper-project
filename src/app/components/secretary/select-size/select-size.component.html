@@ -1,7 +1,7 @@
 <div class="div">
   @for (item of items; track $index) {
   <div class="rectangle" (click)="open(content,item)" [ngStyle]="{'width.px': item.x, 'height.px': item.y}">
-    {{item.name}}
+    <div>+</div><br> <div>{{item.name}}</div>
   </div>
   }
 </div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- הקובייה הראשונה לבד -->
+  <div class="item-wrapper">
+    <div class="item-label">1</div>
+    <div class="rectangle"></div>
+  </div>
+
+  <!-- שאר הקוביות, בזוגות -->
+  @for(pair of pairs; track $index)
+  {
+  @let i=$index;
+  <div class="pair-wrapper">
+    @for(item of pair; track $index) {
+    <div class="item-wrapper">
+      @let j=$index;
+      <div class="item-label">{{ i * 2 + j + 2 }}</div>
+      <div class="rectangle"></div>
+    </div>
+    }
+    <div class="divider-line"></div>
+  </div>
+  }
+</div>

@@ -23,7 +23,7 @@ export class ShowPostsComponent {
   async ngOnInit() {
     await this.loadSizes();
     await this.loadPosts();
-    this.postService.isChanged.subscribe(res=>{
+    this.postService.isChanged.subscribe(res => {
       this.loadPosts();
     })
   }
@@ -49,5 +49,13 @@ export class ShowPostsComponent {
     } catch (error) {
       console.error('Error getting documents: ', error);
     }
+  }
+
+  getPointer() {
+    return (this.posts ?? []).reduce((sum, item) => sum + (item.sizePost?.countPoint ?? 0), 0) - this.getPointerNotExist();
+  }
+
+  getPointerNotExist() {
+    return (this.posts ?? []).reduce((sum, item) => sum + (item.sizePost?.countPoint ?? 0), 0) % 16;
   }
 }

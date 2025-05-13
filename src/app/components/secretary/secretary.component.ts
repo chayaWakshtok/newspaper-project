@@ -4,7 +4,7 @@ import { ShowPostsComponent } from './show-posts/show-posts.component';
 
 @Component({
   selector: 'app-secretary',
-  imports: [SelectSizeComponent, SelectSizeComponent,ShowPostsComponent],
+  imports: [SelectSizeComponent,ShowPostsComponent],
   templateUrl: './secretary.component.html',
   styleUrl: './secretary.component.scss'
 })

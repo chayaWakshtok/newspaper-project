@@ -1,0 +1,7 @@
+<div class="b1">
+  @for (post of posts; track $index) {
+    <div class="rectangle"  [ngStyle]="{'width.px': (post.sizePost?.x??0)/2, 'height.px': (post.sizePost?.y??0)/2}">
+      {{post.name}}
+    </div>
+    }
+</div>

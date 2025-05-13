@@ -1,0 +1,15 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 87px);
+  border-left: 1px solid rgba(12, 57, 223, 1);
+}
+
+.flow {
+  padding-right: 18px;
+}
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}

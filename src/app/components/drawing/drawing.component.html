@@ -1,8 +1,88 @@
 <div class="border-b">
   <div class="top1">
-    <app-posts></app-posts>
+    <div class="b1" id="todo" #todo="cdkDropList" [cdkDropListData]="posts" [cdkDropListConnectedTo]="targetDropListIds"
+      cdkDropList>
+      @for (post of posts; track $index) {
+      <div class="rectangle" cdkDrag [cdkDragData]="post"
+        [ngStyle]="{'width.px': (post.sizePost?.x??0)/2, 'height.px': (post.sizePost?.y??0)/2}">
+        {{post.name}}
+      </div>
+      }
+    </div>
   </div>
 </div>
 <div class="top2">
-  <app-pages-post></app-pages-post>
+  <div class="container">
+    <div class="item-wrapper">
+      <div class="item-label">1</div>
+      <div class="rectangle" [id]="'target-' + 1" cdkDropListData="1"> </div>
+    </div>
+
+    @for (pair of pairs; track $index) {
+    @let i = $index;
+    <div class="pair-wrapper">
+      @for (item of pair; track $index) {
+      @let j = $index;
+      <div class="item-wrapper">
+        <div class="item-label">{{ i * 2 + j + 2 }}</div>
+
+        <div class="rectangle drop-target" cdkDropList [id]="'target-' + (i * 2 + j + 2)"
+          [cdkDropListData]="assignedPosts[i * 2 + j + 2]" [cdkDropListConnectedTo]="targetDropListIds"
+          (cdkDropListDropped)="onDrop($event, i * 2 + j + 2)">
+          @if (assignedPosts[i * 2 + j + 2]) {
+          @for(ass of assignedPosts[i * 2 + j + 2]; track $index) {
+          <div [ngStyle]="{'width.px': (ass.sizePost?.x??0)/2, 'height.px': (ass.sizePost?.y??0)/2}"
+            style="border: 1px solid;">{{ ass.name }}
+          </div>
+          <!-- <div style="font-size: 10px;">{{ ass.sizePost?.x }} x {{ ass.sizePost?.y }}</div> -->
+          }
+          }
+
+        </div>
+      </div>
+      }
+      <div class="divider-line"></div>
+    </div>
+    }
+  </div>
+
 </div>
+
+
+<!-- <div class="border-b">
+  <div class="top1">
+    <div class="b1" id="todo" cdkDropList #todo="cdkDropList" [cdkDropListData]="posts"
+      [cdkDropListConnectedTo]="targetDropListIds" (cdkDropListDropped)="onDrop($event,0)">
+      <div class="rectangle" *ngFor="let post of posts; trackBy: trackById" cdkDrag [cdkDragData]="post" [ngStyle]="{
+          'width.px': (post.sizePost?.x ?? 0) / 2,
+          'height.px': (post.sizePost?.y ?? 0) / 2
+        }">
+        {{ post.name }}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top2">
+  <div class="container">
+    <div class="item-wrapper">
+      <div class="item-label">1</div>
+      <div class="rectangle">לא פעיל</div>
+    </div>
+
+    <div class="pair-wrapper" *ngFor="let pair of pairs; let i = index">
+      <ng-container *ngFor="let page of pair; let j = index">
+        <div class="item-wrapper">
+          <div class="item-label">{{ i * 2 + j + 2 }}</div>
+          <div class="rectangle drop-target" cdkDropList [id]="'target-' + (i * 2 + j + 2)"
+            [cdkDropListData]="assignedPosts[i * 2 + j + 2]" [cdkDropListConnectedTo]="targetDropListIds"
+            (cdkDropListDropped)="onDrop($event, i * 2 + j + 2)">
+            <div *ngFor="let item of assignedPosts[i * 2 + j + 2]" class="dragged-item">
+              {{ item.name }}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+</div> -->

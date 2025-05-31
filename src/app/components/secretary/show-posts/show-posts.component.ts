@@ -3,18 +3,17 @@ import { SizePost } from '../../../models/size-post.model';
 import { Post } from '../../../models/post.model';
 import { collection, Firestore } from '@angular/fire/firestore';
 import { getDocs } from 'firebase/firestore';
-import { NgStyle } from '@angular/common';
+import { CommonModule, NgStyle, NumberSymbol } from '@angular/common';
 import { PostsService } from '../../../services/posts.service';
 
 
 @Component({
   selector: 'app-show-posts',
-  imports: [NgStyle],
+  imports: [NgStyle,CommonModule ],
   templateUrl: './show-posts.component.html',
   styleUrl: './show-posts.component.scss'
 })
 export class ShowPostsComponent {
-
   private firestore: Firestore = inject(Firestore);
   private postService = inject(PostsService);
   items: SizePost[] = [];
@@ -52,7 +51,7 @@ export class ShowPostsComponent {
   }
 
   getPointer() {
-    return (this.posts ?? []).reduce((sum, item) => sum + (item.sizePost?.countPoint ?? 0), 0) - this.getPointerNotExist();
+    return (this.posts ?? []).reduce((sum, item) => sum + (item.sizePost?.countPoint ?? 0), 0) / 16;
   }
 
   getPointerNotExist() {

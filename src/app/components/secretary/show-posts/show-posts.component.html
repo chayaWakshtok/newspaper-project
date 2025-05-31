@@ -1,4 +1,4 @@
-<button class="pointer">{{getPointer()}} ו{{getPointerNotExist()}} קוביות</button>
+<button class="pointer">{{getPointer()| number:'1.0-0'}} ו{{getPointerNotExist()}} קוביות</button>
 <div class="div">
   @for (post of posts; track $index) {
   <div class="rectangle" [ngStyle]="{'width.px': post.sizePost?.x, 'height.px': post.sizePost?.y}">
